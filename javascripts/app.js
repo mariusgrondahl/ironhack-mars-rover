@@ -1,42 +1,65 @@
 // Rover Object Goes Here
 // ======================
-var rover = {
-  direction: 'N';
+let rover = {
+  direction: "N"
 }
 // ======================
-function turnLeft(rover){
-  rover.direction = 'W';
-  console.log("turnLeft was called!");
+function turnLeft(){
+  switch (rover.direction) {  
+    case "W":
+      rover.direction = "S";
+      break;
+  
+    case "S":
+      rover.direction = "E";
+      break;
+  
+    case "E":
+      rover.direction = "N";
+      break;
+  
+    default:
+      rover.direction = "W";
+  }
 }
 
-function turnRight(rover){
-  rover.direction = 'W';
-  console.log("turnRight was called!");
+function turnRight(){
+  switch (rover.direction) {
+    case "W":
+      rover.direction = "N";
+      break;
+  
+    case "S":
+      rover.direction = "W";
+      break;
+  
+    case "E":
+      rover.direction = "S";
+      break;
+  
+    default:
+      rover.direction = "E";
+  }
+
 }
 
-function moveForward(rover){
-  rover.direction = 'W';
-  console.log("moveForward was called")
+function moveForward(){
+  switch (rover.direction) {  
+    case "W":
+      rover.direction = "W";
+      break;
+  
+    case "S":
+      rover.direction = "S";
+      break;
+  
+    case "E":
+      rover.direction = "E";
+      break;
+  
+    default:
+      rover.direction = "N";
+  }
 }
 
 
-switch (rover.direction) {
-  case forward:
-    // code
-    break;
-    
-  case right:
-    // code
-    break;
-
-  case backward:
-    // code
-    break;
-
-  case left:
-    // code
-    break;
-
-  default:
-    // code
-}
