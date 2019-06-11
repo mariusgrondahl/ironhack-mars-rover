@@ -20,13 +20,23 @@ function moveForward(rover){
 }
 
 
-switch (direction) {
-  case x:
+switch (rover.direction) {
+  case forward:
     // code
     break;
-  case y:
+    
+  case right:
     // code
     break;
+
+  case backward:
+    // code
+    break;
+
+  case left:
+    // code
+    break;
+
   default:
     // code
 }
