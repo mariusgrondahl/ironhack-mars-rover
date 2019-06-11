@@ -1,7 +1,9 @@
 // Rover Object Goes Here
 // ======================
 let rover = {
-  direction: "N"
+  direction: "N",
+  x: 0,
+  y: 0
 }
 // ======================
 function turnLeft(){
@@ -48,20 +50,29 @@ function moveForward(){
   switch (rover.direction) {  
     case "W":
       rover.direction = "W";
+      rover.x--;
+      console.log(rover.x, rover.y);
       break;
   
     case "S":
       rover.direction = "S";
+      rover.y--;
+      console.log(rover.x, rover.y);
       break;
   
     case "E":
       rover.direction = "E";
+      rover.x++ 
+      console.log(rover.x, rover.y);
       break;
   
     default:
       rover.direction = "N";
+      rover.y++;
+      console.log(rover.x, rover.y);
   }
   console.log(rover.direction);
+
 }
 
 
