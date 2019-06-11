@@ -3,13 +3,17 @@
 let rover = {
   direction: "N",
   x: 0,
-  y: 0
+  y: 0,
+  travelLog: ""
 }
+
 // ======================
+
 function turnLeft(){
   switch (rover.direction) {  
     case "W":
       rover.direction = "S";
+      rover.direction.push(rover.travelLog);
       break;
   
     case "S":
@@ -18,10 +22,12 @@ function turnLeft(){
   
     case "E":
       rover.direction = "N";
+
       break;
   
     default:
       rover.direction = "W";
+
   }
   console.log(rover.direction);
 }
@@ -73,6 +79,22 @@ function moveForward(){
   }
   console.log(rover.direction);
 
+}
+
+
+function directionCommand(command) {  
+  let commandWord = command ;
+
+  let i = 0;
+  for ( i = 0; i < commandWord.length; i++ ) {
+    if (i == "f") {
+      return moveForward();
+    } if (i == "r") {
+      return turnRight();
+    } else {
+      turnLeft();
+    }
+  }
 }
 
 
