@@ -21,6 +21,7 @@ function turnLeft(){
     default:
       rover.direction = "W";
   }
+  console.log(rover.direction);
 }
 
 function turnRight(){
@@ -40,7 +41,7 @@ function turnRight(){
     default:
       rover.direction = "E";
   }
-
+  console.log(rover.direction);
 }
 
 function moveForward(){
@@ -60,6 +61,7 @@ function moveForward(){
     default:
       rover.direction = "N";
   }
+  console.log(rover.direction);
 }
 
 
