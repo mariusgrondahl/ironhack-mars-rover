@@ -4,16 +4,14 @@ let rover = {
   direction: "N",
   x: 0,
   y: 0,
-  travelLog: ""
+  travelLog: [0.0]
 }
 
 // ======================
-
 function turnLeft(){
   switch (rover.direction) {  
     case "W":
       rover.direction = "S";
-      rover.direction.push(rover.travelLog);
       break;
   
     case "S":
@@ -22,7 +20,6 @@ function turnLeft(){
   
     case "E":
       rover.direction = "N";
-
       break;
   
     default:
@@ -52,12 +49,16 @@ function turnRight(){
   console.log(rover.direction);
 }
 
+let tracking = rover.travelLog;
+
 function moveForward(){
   switch (rover.direction) {  
     case "W":
       rover.direction = "W";
       rover.x--;
       console.log(rover.x, rover.y);
+      tracking.push(rover.x);
+      tracking.push(rover.y);
       break;
   
     case "S":
@@ -84,7 +85,6 @@ function moveForward(){
 
 function directionCommand(command) {  
   let commandWord = command ;
-
   let i = 0;
   for ( i = 0; i < commandWord.length; i++ ) {
     if (i == "f") {
