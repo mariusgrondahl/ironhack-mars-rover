@@ -86,15 +86,20 @@ function moveForward(){
 
 
 function directionCommand(command) {  
-  let commandWord = command ;
-  let i = 0;
-  
-  for ( i = 0; i < commandWord.length; i++ ) {
+
+for (var y = 0; y < command.length; y++) {
+    console.log(command.charAt(y));
+}
+
+  for ( var i = 0; i < command.length; i++ ) {
     if (i == "f") {
+      console.log("Forward");
       return moveForward();
     } if (i == "r") {
+      console.log("Turn Right");
       return turnRight();
     } if (i == "l") {
+      console.log("Turn Left");
       return turnLeft();
     }
   }
