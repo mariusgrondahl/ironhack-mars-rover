@@ -7,6 +7,8 @@ let rover = {
   travelLog: [0,0]
 }
 
+let tracking = rover.travelLog;
+
 // ======================
 function turnLeft(){
   switch (rover.direction) {  
@@ -22,11 +24,10 @@ function turnLeft(){
       rover.direction = "N";
       break;
   
-    default:
+    case "N":
       rover.direction = "W";
 
   }
-  console.log(rover.direction);
 }
 
 function turnRight(){
@@ -43,13 +44,10 @@ function turnRight(){
       rover.direction = "S";
       break;
   
-    default:
+    case "N":
       rover.direction = "E";
   }
-  console.log(rover.direction);
 }
-
-let tracking = rover.travelLog;
 
 function moveForward(){
   switch (rover.direction) {  
@@ -74,33 +72,34 @@ function moveForward(){
       tracking.push(rover.x, rover.y);
       break;
   
-    default:
+    case "N":
       rover.direction = "N";
       rover.y++;
       console.log(rover.x, rover.y);
       tracking.push(rover.x, rover.y);
   }
-  console.log(rover.direction);
 
 }
 
 
 function directionCommand(command) {  
 
-for (var y = 0; y < command.length; y++) {
+  for (var y = 0; y < command.length; y++) {
     console.log(command.charAt(y));
-}
 
-  for ( var i = 0; i < command.length; i++ ) {
-    if (i == "f") {
-      console.log("Forward");
-      return moveForward();
-    } if (i == "r") {
-      console.log("Turn Right");
-      return turnRight();
-    } if (i == "l") {
-      console.log("Turn Left");
-      return turnLeft();
+    switch (command.charAt(y)) {  
+      case "F":
+        moveForward();
+        break;
+    
+      case "R":
+        turnRight();
+        break;
+    
+      case "L":
+        turnLeft();
+        break;
+    
     }
   }
 }
