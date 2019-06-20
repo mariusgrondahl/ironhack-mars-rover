@@ -7,8 +7,6 @@ let rover = {
   travelLog: [0,0]
 }
 
-let tracking = rover.travelLog;
-
 // ======================
 function turnLeft(){
   switch (rover.direction) {  
@@ -49,34 +47,31 @@ function turnRight(){
   }
 }
 
+
 function moveForward(){
   switch (rover.direction) {  
     case "W":
-      rover.direction = "W";
       rover.x--;
       console.log(rover.x, rover.y);
-      tracking.push(rover.x, rover.y);
+      rover.travelLog.push(rover.x, rover.y);
       break;
   
     case "S":
-      rover.direction = "S";
       rover.y--;
       console.log(rover.x, rover.y);
-      tracking.push(rover.x, rover.y);
+      rover.travelLog.push(rover.x, rover.y);
       break;
   
     case "E":
-      rover.direction = "E";
       rover.x++ 
       console.log(rover.x, rover.y);
-      tracking.push(rover.x, rover.y);
+      rover.travelLog.push(rover.x, rover.y);
       break;
   
     case "N":
-      rover.direction = "N";
       rover.y++;
       console.log(rover.x, rover.y);
-      tracking.push(rover.x, rover.y);
+      rover.travelLog.push(rover.x, rover.y);
   }
 
 }
@@ -84,10 +79,10 @@ function moveForward(){
 
 function directionCommand(command) {  
 
-  for (var y = 0; y < command.length; y++) {
-    console.log(command.charAt(y));
+  for (var i = 0; i < command.length; i++) {
+    console.log(command.charAt(i));
 
-    switch (command.charAt(y)) {  
+    switch (command.charAt() {  
       case "F":
         moveForward();
         break;
